@@ -1,0 +1,111 @@
+{% extends 'site_base.html' %}
+{%load staticfiles%}
+{% block title %}
+    Home
+{% endblock title %}
+{% block extra_css %}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/grayscale.css' %}" rel="stylesheet">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+{% endblock extra_css %}
+{%block content %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Grayscale - Start Bootstrap Theme</title>
+    </head>
+    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+        <!-- Intro Header -->
+        <header class="intro">
+            <div class="intro-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <h1 id="site_title" class="intro-text">The Out of Stater</h1>
+                            <p id="site_des" class="intro-text">For the few living with the many...</p>
+                            <br>
+                            <a href="#about" class="btn btn-circle page-scroll">
+                                <i class="fa fa-angle-double-down animated"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About Section -->
+        <section id="about" class="container content-section text-center">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                        <a href="#page-top" class="btn btn-circle page-scroll">
+                            <i id="about_arrow" class="fa fa-angle-double-up animated"></i>
+                        </a>
+                        <h2>About Us</h2>
+                        <p>Our goal is to create a more trustworthy and genuine blog site for maximized user friendliness<i class="em em---1"></i> Tired of being bombarded with ads while trying to read relatable articles that pop up on your feed? <i class="em em-cry"></i> We're the place to go..if you're on out of stater of course <i class="em em-wink"></i></p>
+                        <p>Check out the team<a href="/about"> here</a>!</p>
+                        <p><a href="#download" class="btn btn-circle page-scroll">
+                            <i id="about_arrow" class="fa fa-angle-double-down animated"></i>
+                        </a></p>
+                </div>
+            </div>
+        </section>
+        <!-- Download Section -->
+        <section id="download" class="content-section text-center">
+            <div class="download-section">
+                <div class="container">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h2>Write your own story</h2>
+                        <p>You can submit your own article to be featured on the site here!</p>
+                        <a href="/articles/submit" class="btn btn-default btn-lg">Visit Submit Page</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact" class="container content-section text-center">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Contact The Out of Stater</h2>
+                    <p>Feel free to email us for business inquiries, to provide some feedback on our site, or to just say hello!</p>
+                    <p><a href="mailto:feedback@startbootstrap.com">contact@theostater.com</a>
+                </p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Map Section -->
+    <div id="map"></div>
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; Your Website 2016</p>
+        </div>
+    </footer>
+</body>
+</html>
+{%endblock content%}
+{% block extra_js %}
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+<!-- Theme JavaScript -->
+<script src="{% static 'js/grayscale.js' %}"></script>
+
+{% endblock extra_js %}

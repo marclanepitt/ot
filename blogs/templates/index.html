@@ -1,0 +1,114 @@
+{% extends "blog_site_base.html" %}
+{%load staticfiles %}
+{% block title %}
+    Articles
+{% endblock title %}
+{% block extra_css %}
+    <link href="{% static 'css/blog-home.css' %}" rel="stylesheet">
+
+{% endblock extra_css %}
+{% block content %}
+    <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="description" content="">
+            <meta name="author" content="">
+            <title>Blog Home - Start Bootstrap Template</title>
+        </head>
+        <body>
+            <!-- Page Content -->
+            <div class="container">
+                <div class="row">
+                    <!-- Blog Entries Column -->
+                    <div class="col-md-8">
+                        <h1 id="site_title" class="page-header">
+                        The Out of Stater
+                        </h1>
+                        {%for article in latest_article_list%}
+                        {%if article.is_approved%}
+                        <h2>
+                        {{article.title}}
+                        </h2>
+                        <p><span class="glyphicon glyphicon-time"></span> Posted on {{article.pub_date}}</p>
+                        <hr>
+                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                            <div class="flipper">
+                                <div class="front">
+                                    <img id="blog_pic" class="img-responsive" src="{{article.pic}}" alt="Blog Pic">
+                                </div>
+                                <div class="back">
+                                    <h4 class="lead">
+                                    by {{article.author}}<img id="author_pic" class="img-circle img-responsive img-center" src="{{article.author_pic}}" alt="">
+                                    </h4>
+                                    <p>{{article.description}}</p>
+                                    <div style="text-align: center; padding-top:200px;">
+                                        <button class="btn btn-lg" onClick="javascript: document.location.href='/articles/{{article.slug}}'">Read Article</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        {%endif%}
+                        {%endfor%}
+                    </div>
+                    <!-- Blog Sidebar Widgets Column -->
+                    <div id="side-bar" class="col-md-4">
+                        <!-- Blog Categories Well -->
+                        <div class="well">
+                            <h4>Recent Tags &nbsp<i class="glyphicon glyphicon-tag"></i></h4>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <ul class="list-unstyled">
+                                        <li><a href="#">Things to relate to</a>
+                                    </li>
+                                    <li><a href="#">Food</a>
+                                </li>
+                                <li><a href="#">College</a>
+                            </li>
+                            <li><a href="#">Pizza</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                    <ul class="list-unstyled">
+                        <li><a href="#">East Coast</a>
+                    </li>
+                    <li><a href="#">These will be dynamically added eventually</a>
+                </li>
+                <li><a href="#">Category Name</a>
+            </li>
+            <li><a href="#">Category Name</a>
+        </li>
+    </ul>
+</div>
+<!-- /.col-lg-6 -->
+</div>
+<!-- /.row -->
+</div>
+<!-- Side Widget Well -->
+<div class="well">
+<h4>Categories</h4>
+<br>
+<button id="grow" class="btn" type="submit">Lists <i class="glyphicon glyphicon-list-alt"></i></button>&nbsp &nbsp &nbsp &nbsp &nbsp
+<button id="grow" class="btn" type="submit">Blogs <i class="glyphicon glyphicon-book"></i></button>&nbsp &nbsp &nbsp &nbsp &nbsp
+<button id="grow" class="btn" type="submit">Countdowns <i class="glyphicon glyphicon-sort-by-order"></i></button>
+</div>
+</div>
+</div>
+<!-- /.row -->
+<hr>
+<!-- Footer -->
+</div>
+<!-- /.container -->
+
+
+</body>
+</html>
+{% endblock content %}
+
+{% block extra_js %}
+{% endblock extra_js %}

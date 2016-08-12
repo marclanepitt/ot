@@ -1,0 +1,21 @@
+{% extends "blog_site_base.html" %}
+{% load staticfiles %}
+{% block extra_css %}
+    <link rel="stylesheet"  href="{%static 'css/submit.css'%}">
+{% endblock extra_css %}
+{% block title %}
+    Submit
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-offset-4 col-sm-4">
+                <br><br><br><br>
+                <h1>Pick a type of article</h1>
+                <button id="grow" class="btn" type="submit">Lists <i class="glyphicon glyphicon-list-alt"></i></button>
+                <button id="grow" class="btn" type="submit">Blogs <i class="glyphicon glyphicon-book"></i></button>
+                <button id="grow" class="btn" type="submit">Countdowns <i class="glyphicon glyphicon-sort-by-order"></i></button>
+            </div>
+        </div>
+    </div>
+    {%endblock%}

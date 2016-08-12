@@ -1,0 +1,142 @@
+/*!
+ * Start Bootstrap - Blog Home (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+footer {
+    margin: 50px 0;
+}
+
+
+#site_title{
+  color: black;
+  -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: lightgrey;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 50px;
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 72px;
+    margin-bottom: 20px;
+}
+
+#side-bar {
+  position: fixed;
+  top: 100px;
+  right: 15px;
+}
+
+#blog_pic {
+    height: 260; 
+    width: 600px; 
+    max-width: 600px; 
+    max-height: 260px;
+}
+
+#author_pic {
+    height: auto; 
+    width: auto; 
+    max-width: 50px; 
+    max-height: 50px;
+}
+
+#grow { transition: all .2s ease-in-out; }
+#grow:hover { transform: scale(1.8); }
+
+.flip-container {
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
+
+  border: 1px solid #ccc;
+}
+
+  .flip-container:hover .flipper,  
+  .flip-container.hover .flipper {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+
+.flip-container, .front, .back {
+  width: 600px;
+  height: 260;
+}
+
+.flipper {
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+
+  -moz-transition: 0.6s;
+  -moz-transform-style: preserve-3d;
+  
+  -o-transition: 0.6s;
+  -o-transform-style: preserve-3d;
+
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+.front, .back {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+
+  background: #f8f8f8;
+}
+
+
+
+
+.back p {
+  padding-top: 120px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: arial;
+  line-height: 2em;
+}
+
+
+.back h4 {
+  padding-top: 5px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: arial;
+  line-height: 2em;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
