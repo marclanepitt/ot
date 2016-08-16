@@ -26,6 +26,18 @@ footer {
     margin-bottom: 20px;
 }
 
+#category_head {
+    color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: lightgrey;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 33px;
+    text-transform: uppercase;
+    line-height: 72px;
+    margin-bottom: 20px;
+}
+
 #side-bar {
   position: fixed;
   top: 100px;

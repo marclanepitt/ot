@@ -60,7 +60,7 @@ footer {
     transition: all 0.4s ease-in-out;
     top: 20px;
     left: 20px;
-    background: #f9f9f9 url(../images/bg.jpg);
+    background: #f9f9f9;
     box-shadow: 
         0 0 0 20px rgba(153,186,221,0.2), 
         inset 0 0 3px rgba(153,186,221, 0.8);
@@ -95,7 +95,7 @@ footer {
   max-width:100%;
   height:auto;
   background-size: contain;
-background-image: url(https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/13872737_1011246848996543_4136306347783026128_n.jpg?oh=ee5d6f7f5c7500eeee933fe4e25c89db&oe=58276641);
+background-image: url(https://scontent-ord1-1.xx.fbcdn.net/v/t1.0-0/p526x296/13510966_1021882317848151_5922298557590044329_n.jpg?oh=815dd98a0aac42d46437f5c44e2e7fec&oe=584B3F3F);
 }
 
 .ch-img-2 { 

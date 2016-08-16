@@ -1,0 +1,70 @@
+{% extends "blog_site_base.html" %}
+{% load staticfiles %}
+{% block title %}
+    Articles
+{% endblock title %}
+{% block extra_css %}
+    <link href="{% static 'css/blog-home.css' %}" rel="stylesheet">
+
+{% endblock extra_css %}
+{% block content %}
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+    </head>
+    <body>
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
+                <h1 id="site_title" class="page-header">
+                  Countdowns
+                </h1>
+                {% for article in latest_article_list %}
+                    {% if article.is_approved %}
+                        {% if article.category == "Countdown" %}
+                            <h2>
+                                {{ article.title }}
+                            </h2>
+                            <p><span class="glyphicon glyphicon-time"></span> Posted on {{ article.pub_date }}</p>
+                            <hr>
+                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                <div class="flipper">
+                                    <div class="front">
+                                        <img id="blog_pic" class="img-responsive" src="{{ article.pic }}"
+                                             alt="Blog Pic">
+                                    </div>
+                                    <div class="back">
+                                        <h4 class="lead">
+                                            by {{ article.author }}<img id="author_pic"
+                                                                        class="img-circle img-responsive img-center"
+                                                                        src="{{ article.author_pic }}" alt="">
+                                        </h4>
+                                        <p>{{ article.description }}</p>
+                                        <div style="text-align: center; padding-top:200px;">
+                                            <button class="btn btn-lg"
+                                                    onClick="javascript: document.location.href='/articles/{{ article.slug }}'">
+                                                Read Article
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+    </div>
+    </div>
+
+
+{% endblock content %}
+
+{% block extra_js %}
+{% endblock extra_js %}

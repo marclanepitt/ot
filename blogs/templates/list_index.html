@@ -1,51 +1,32 @@
 {% extends "blog_site_base.html" %}
-{%load staticfiles %}
-
+{% load staticfiles %}
 {% block title %}
     Articles
 {% endblock title %}
-
 {% block extra_css %}
-<link href="{% static 'css/blog-home.css' %}" rel="stylesheet">
+    <link href="{% static 'css/blog-home.css' %}" rel="stylesheet">
+
 {% endblock extra_css %}
-
-
 {% block content %}
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Blog Home - Start Bootstrap Template</title>
-
-
-</head>
-
-<body>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Blog Home - Start Bootstrap Template</title>
+    </head>
     <!-- Page Content -->
     <div class="container">
-
         <div class="row">
-
             <!-- Blog Entries Column -->
             <div class="col-md-8">
-
                 <h1 id="site_title" class="page-header">
-                    The Out of Stater
+                    Lists
                 </h1>
-
-                <h1>
-                Search Results
-                </h1>
-
-
                 {% for article in latest_article_list %}
-                    {% if article.is_approved %}
+                    {% if article.is_approved%}
+                        {% if article.category == "List" %}
                         <h2>
                             {{ article.title }}
                         </h2>
@@ -75,10 +56,14 @@
                         <br>
                         <br>
                     {% endif %}
+                    {% endif %}
                 {% endfor %}
-
-
             </div>
 
-
+        </div>
+    </div>
+    </div>
 {% endblock content %}
+
+{% block extra_js %}
+{% endblock extra_js %}

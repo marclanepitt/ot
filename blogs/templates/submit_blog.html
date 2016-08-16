@@ -1,0 +1,26 @@
+{% extends 'blog_site_base.html' %}
+{% load staticfiles %}
+{%  load bootstrap %}
+
+{%  block extra_css %}
+    <link href="{% static 'css/submit.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block side_bar %}{% endblock %}
+
+{% block content %}
+    <div class="col-md-4 col-md-offset-4">
+    <form role="form">
+        <legend>Submit Blog</legend>
+        {% csrf_token %}
+        {{ form|bootstrap }}
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+
+{% endblock %}

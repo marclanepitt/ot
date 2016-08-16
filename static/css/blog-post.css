@@ -4,6 +4,13 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
+#countdown {
+    border-style: solid;
+    width:700px;
+    height:400px;
+
+}
+
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
@@ -18,11 +25,39 @@ footer {
 }
 
 #author_pic {
-    height: auto; 
-    width: auto; 
-    max-width: 50px; 
+    height: auto;
+    width: auto;
+    max-width: 50px;
     max-height: 50px;
 }
 
 #grow { transition: all .2s ease-in-out; }
 #grow:hover { transform: scale(1.8); }
+
+#countdown img {
+    max-width: 250px;
+    max-height: 250px;
+}
+
+#title_bounds {
+    max-height: 600px;
+    max-width: 750px;
+}
+
+#slides {
+    margin: 0 auto;
+    width: 100px;
+}
+
+#arrows {
+
+    text-align: center;
+    font-size: 5em;
+    padding-right: 40px;
+
+}
+
+#img_bounds {
+    max-height: 350px;
+    max-width: 350px;
+}
