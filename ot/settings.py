@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blogs.apps.BlogsConfig',
     'django_extensions',
-    'bootstrapform'
+    'bootstrapform',
+    'taggit',
+    'debug_toolbar',
 
 ]
 

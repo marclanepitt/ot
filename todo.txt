@@ -1,6 +1,6 @@
-1)Submit pages for each article type
-3)tags?
-5)search bar
-6)html for each category type make look good
+1)forms
+    -get manual forms to work
+2)tags?
+3)search bar
+4)html for each category type make look good
     -replace countdown slide with bootstrap carousel
-7) facebook comments

@@ -12,19 +12,32 @@
     <meta name="author" content="">
 
 
-{% block title %}
-    
-{% endblock title %}
+
 
 {% block extra_css %}
     <link href="{% static 'css/blog-post.css' %}" rel="stylesheet">
 {% endblock extra_css %}
 </head>
 
+{% block title %}
+    {{article.title}}
+{% endblock title %}
+
 {% block content %}
+
+
     
 
 <body>
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
     <!-- Page Content -->
     <div class="container">
@@ -37,6 +50,8 @@
                 <!-- Blog Post -->
 
                 <!-- Title -->
+
+
                 <br>
                 <h1>{{article.title}}</h1>
 
@@ -66,8 +81,11 @@
 
                 {%if article.category == "Blog" %}
 
-                {{article.text | linebreaks}}
-                
+                    <div id = "blog_bounds">
+
+                <p id="text_bounds">{{article.text | linebreaks}}</p>
+
+                    </div>
                 {%endif%}
 
                 {%if article.category == "List"%}
@@ -88,34 +106,73 @@
                 {%if article.category == "Countdown"%}
 
                     <br>
-                    <div id="countdown">
-                    {% for countdownitem in article.countdownitem_set.all %}
-                        <div id="slides" class = slides>
-                        <h2> {{ forloop.revcounter }}. {{ countdownitem.title }}</h2>
-                        <img id="cd_img_bounds" class="img-responsive" src="{{ countdownitem.pic }}" alt="">
-                        <p>{{ countdownitem.description |linebreaks }}</p>
-                        </div>
+                <div id="c_pad">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
 
 
-
-
-                    {% endfor %}
-                    <br>
-
-
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        {% for countdownitem in article.countdownitem_set.all %}
+                        <li data-target="#carousel-example-generic" data-slide-to="{{ forloop.revcounter }}"></li>
+                        {% endfor %}
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="http://tugta.com/wp-content/uploads/2015/10/large-white-background.jpg" alt="First slide">
+                        <!-- Static Header -->
+                        <div class="header-text hidden-xs">
+                            <div class="col-md-12 text-center">
+                                <h2>
+                                    {{ article.title }}
+                                </h2>
+                                <br>
+                                <br>
+                            </div>
+                        </div><!-- /header-text -->
                     </div>
-                    <div id="arrows">
-                        <i class="glyphicon glyphicon-circle-arrow-left" onclick="plusDivs(-1)"></i>
-                        <i class="glyphicon glyphicon-circle-arrow-right" onclick="plusDivs(+1)"></i>
+                {% for countdownitem in article.countdownitem_set.all %}
+                    <div class="item">
+                        <img src="http://tugta.com/wp-content/uploads/2015/10/large-white-background.jpg"
+                             alt="Second slide">
+                        <!-- Static Header -->
+                        <div class="header-text hidden-xs">
+                            <div class="col-md-12 text-center">
+                                <h2>
+                                    <div class = "numberCircle">{{ forloop.revcounter }}</div>
+                                </h2>
+                                <h2>{{ countdownitem.title }}</h2>
+                                <br>
+                                <h3>
+                                    {{ countdownitem.description |linebreaks }}
+                                </h3>
+                                <img id="cd_img_bounds" class="img-responsive" src="{{ countdownitem.pic }}" alt="">
+
+                                <br>
+
+                            </div>
+                        </div><!-- /header-text -->
                     </div>
-
-
+                        {%  endfor %}
+                    </div>
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div><!-- /carousel -->
+            </div>
+                    </div>
                 {%endif%}
-
                 <hr>
             </div>
         </div>
     </div>
+<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="600"
+     data-numposts="5"></div>
 </body>
 {% endblock content %}
 
@@ -144,4 +201,14 @@
             x[slideIndex - 1].style.display = "block";
         }
     </script>
+
+    <div id="fb-root"></div>
+    <script>(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 {% endblock %}

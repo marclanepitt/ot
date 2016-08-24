@@ -4,6 +4,8 @@ from django.db import models
 import datetime
 from django_extensions.db import fields
 from django.utils import timezone
+from taggit.managers import TaggableManager
+
 
 class Article(models.Model):
     CATEGORIES = (
@@ -22,6 +24,7 @@ class Article(models.Model):
     slug = fields.AutoSlugField(populate_from = 'title')
     category = models.CharField(choices = CATEGORIES, max_length=250) 
     is_approved = models.BooleanField(default = False)
+    tags = TaggableManager()
 
     def __str__(self):
         return self.text

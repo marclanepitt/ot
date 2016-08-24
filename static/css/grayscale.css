@@ -222,34 +222,7 @@ a:focus {
   -webkit-animation-timing-function: linear;
   -moz-animation-timing-function: linear;
 }
-@-webkit-keyframes pulse {
-  0 {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
-@-moz-keyframes pulse {
-  0 {
-    -moz-transform: scale(1);
-    transform: scale(1);
-  }
-  50% {
-    -moz-transform: scale(1.2);
-    transform: scale(1.2);
-  }
-  100% {
-    -moz-transform: scale(1);
-    transform: scale(1);
-  }
-}
+
 .content-section {
   padding-top: 100px;
 }
@@ -370,5 +343,11 @@ body {
     display: inline-block;
     line-height: 72px;
     margin-bottom: 20px;
+
+}
+
+#submit_des {
+  color: black;
+  background-color: rgba(245,245,245,.7)
 
 }
